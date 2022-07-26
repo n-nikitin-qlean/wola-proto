@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package domain;
+option go_package = "gitlab.qleanlabs.ru/platform/finance/finance-invoice/generated/grpc/domain;domain";
+
+enum ProcessType {
+  PROCESS_UNKNOWN = 0;
+  PROCESS_CLEANING = 1; // Уборка, продукт "Регулярные уборки" и "Генеральные уборки", external_process_type=order
+  PROCESS_TIPS = 2; // Чаевые, продукт "Регулярные уборки", external_process_type=tips
+  PROCESS_FINE = 3; // Штраф, продукт "Регулярные уборки", external_process_type=fine
+  PROCESS_APPEAL = 4; // Апелляция, продукт "Регулярные уборки", external_process_type=appeal
+  PROCESS_INVITE_FRIEND = 5; // Бонус "Приведи подругу", продукт "Регулярные уборки", external_process_type=invite_friend
+  PROCESS_UNIFORM_DEDUCTION = 6; // Списание за униформу, продукт "Регулярные уборки", external_process_type=uniform_deduction
+  PROCESS_FAKE_ORDER = 7; // Ложный заказ, продукт "Регулярные уборки", external_process_type=fake_order
+  PROCESS_PREMIUM = 8; // Премия исполнителю, любой продукт, external_process_type=premium
+  PROCESS_WINDOWS_UNIFORM_DEDUCTION = 9; // Списание за униформу в окнах, продукт "Регулярные уборки", external_process_type=window_uniform_deduction
+  PROCESS_ORDER_PROBLEM = 10; // Проблема на заказе, любой продукт, external_process_type=order_problem_resolution
+  PROCESS_RECURRENT = 11; // Рекурентный процесс, любой продукт, external_process_type=recurrent
+  PROCESS_WOLA_DELIVERY = 12; // Оплата доставки воды, продукт "Wola доставка", external_process_type=wola_delivery
+  PROCESS_WOLA_PAYMENT = 13; // Оплата воды, продукт "Wola", external_process_type=wola_payment
+}

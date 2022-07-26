@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package domain;
+option go_package = "gitlab.qleanlabs.ru/platform/finance/finance-invoice/generated/grpc/domain;domain";
+
+import "financeinvoice/domain/balances.proto";
+
+message CustomerIncome {
+    int64 amount = 1;
+    ClientBalance balance = 2;
+}

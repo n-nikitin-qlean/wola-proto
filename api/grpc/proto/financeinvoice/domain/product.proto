@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package domain;
+option go_package = "gitlab.qleanlabs.ru/platform/finance/finance-invoice/generated/grpc/domain;domain";
+
+enum Product {
+    UNKNOWN_PRODUCT = 0;
+    QLEAN_BASIC = 1;
+    QLEAN_DEEP_CLEANING = 2;
+    DRYCLEANING_CURTAINS = 3;
+    SUBSCRIPTION = 4;
+    DRYCLEANING_FURNITURE = 5;
+    CLEANING_HOUSE_DEEP = 6;
+    WOLA_DELIVERY = 7;
+    SELL_GOODS = 8;
+    WOLA = 9;
+}

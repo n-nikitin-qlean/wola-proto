@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ru.qleanlabs.gitlab.platform.finance.finance_invoice.finance_service;
+
+message WebhookOptions {
+    string notificationURL = 1;
+}

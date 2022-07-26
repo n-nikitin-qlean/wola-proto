@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ru.qleanlabs.gitlab.platform.finance.finance_invoice.finance_service;
+option go_package = "generated/grpc/finance";
+
+import "google/protobuf/timestamp.proto";
+import "financeinvoice/domain/customer_expense.proto";
+import "financeinvoice/domain/cards.proto";
+
+message WolaPaymentMeta {
+    string client_id = 1;
+    repeated domain.CustomerExpense client_payments = 2;
+    google.protobuf.Timestamp order_time = 4;
+    domain.CardData card = 5;
+}

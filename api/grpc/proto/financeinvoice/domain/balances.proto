@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package domain;
+option go_package = "gitlab.qleanlabs.ru/platform/finance/finance-invoice/generated/grpc/domain;domain";
+
+enum ContractorBalance {
+    UNKNOWN_CONTRACTOR_BALANCE = 0;
+    CONTRACTOR_CARD_EARNINGS = 1;
+    CONTRACTOR_GAMIFICATION = 2;
+    CONTRACTOR_CASH_DEBT = 3;
+    CONTRACTOR_INSTALLMENT = 4;
+    CONTRACTOR_FINE = 5;
+    CONTRACTOR_CASH_EARNINGS = 6;
+    CONTRACTOR_INSURANCE = 7;
+    CONTRACTOR_BONUS_EARNINGS = 8;
+    CONTRACTOR_COMPENSATION = 9;
+    CONTRACTOR_CARD = 10;
+}
+
+enum ClientBalance {
+    UNKNOWN_CLIENT_BALANCE = 0;
+    CLIENT_CARD = 1;
+    CLIENT_CASH = 2;
+    CLIENT_BONUS = 3;
+    CLIENT_PROMOCODE = 4;
+}
