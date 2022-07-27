@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package sso;
+
+enum SEND {
+    UNDEFINED_SEND = 0;
+    CODE = 1;
+    VERIFICATION_LINK = 2;
+}
+
+enum USER_TYPE {
+    UNDEFINED_USER_TYPE = 0;
+    // Заказчик услуг - покупатели, клиенты, лиды;
+    CUSTOMER = 1;
+    // Исполнитель оказывающий услуги - мастера, курьеры, клинеры, бригадиры;
+    CONTRACTOR = 2;
+    // Внутренний сотрудник;
+    EMPLOYEE = 3;
+    // Человек, внешний сотрудник - салоны, франчайзи
+    PARTNER = 4;
+}
+
+enum CONNECTION {
+    UNDEFINED_CONNECTION = 0;
+    // Вход через login и password
+    CREDENTIAL = 1;
+    // Вход через указание client_id и client_secret
+    M2M = 2;
+    // Вход при помощи отправки OTP через провайдера в платформе
+    PASSWORDLESS = 3;
+    // Вход при помощи отправки OTP через провайдера YCLIENTS
+    YCLIENTS = 4;
+}

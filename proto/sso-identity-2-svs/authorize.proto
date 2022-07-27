@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package sso;
+
+import "sso-identity-2-svs/types.proto";
+
+service AuthorizeService {
+  rpc Authorize (AuthorizeRequest) returns (TokenResponse) {}
+  rpc Refresh (RefreshTokenRequest) returns (RefreshTokenReply) {}
+}
+
+message AuthorizeRequest {
+  string clientId = 1;
+  string clientSecret = 2;
+  repeated string permissions = 3;
+  CONNECTION connection = 4;
+  string login = 5;
+  USER_TYPE userType = 6;
+  SEND send = 7;
+  string password = 8;
+  string verificationCode = 9;
+  string ip = 10;
+  string userAgent = 11;
+  repeated string grants = 12;
+}
+
+message TokenResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
+  string expiresIn = 3;
+  string idToken = 4;
+}
+
+message RefreshTokenRequest {
+  string refreshToken = 1;
+}
+
+message RefreshTokenReply {
+  string accessToken = 1;
+  string refreshToken = 2;
+  string expiresIn = 3;
+  string idToken = 4;
+}
