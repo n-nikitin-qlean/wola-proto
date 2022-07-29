@@ -14,4 +14,5 @@ message WolaDeliveryMeta {
     google.protobuf.Timestamp order_time = 3;
     domain.CardData card = 4;
     WebhookOptions webhook_options = 5;
+    repeated string contractors = 6;
 }
